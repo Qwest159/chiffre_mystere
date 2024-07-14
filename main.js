@@ -27,8 +27,8 @@ let vie = 7;
 
 function jouer() {
   let jeux = true;
-  if (jeux) {
-    button.addEventListener("click", () => {
+  button.addEventListener("click", () => {
+    if (jeux) {
       let message = "";
       let chiffre_recup_utilisateur = document.querySelector("#chiffre").value;
 
@@ -43,6 +43,7 @@ function jouer() {
             console.log(chiffre_mystere);
             message = "Game Over , le nombre recherché est: " + chiffre_mystere;
             jeux = false;
+            console.log(jeux);
           } else if (chiffre_recup_utilisateur < chiffre_mystere) {
             message =
               "Le nombre recherché est plus grand <br> Vie restante: " + vie;
@@ -55,7 +56,7 @@ function jouer() {
         message = "Veuillez rentrer un nombre positif et valide";
       }
       affichage(message);
-    });
-  }
+    }
+  });
 }
 jouer();
