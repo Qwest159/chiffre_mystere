@@ -12,8 +12,8 @@ document.querySelector("#app").innerHTML = `
 
 `;
 
-function affichage(reponse) {
-  let contenu = reponse;
+function affichage(contenus) {
+  let contenu = contenus;
   let divapp = document.querySelector("#app");
   let divh3 = document.createElement("h3");
   divh3.innerHTML = contenu;
@@ -31,7 +31,6 @@ function jouer() {
     if (jeux) {
       let message = "";
       let chiffre_recup_utilisateur = document.querySelector("#chiffre").value;
-
       if (chiffre_recup_utilisateur != "" && chiffre_recup_utilisateur >= 0) {
         if (chiffre_recup_utilisateur == chiffre_mystere) {
           message = "Vous avez gagné";
